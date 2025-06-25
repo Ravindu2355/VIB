@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vibration Editor</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+      #mc{
+          display:none;
+      }
+      #pwin{
+          font-size: 20px;
+          border-radius: 5px;
+          padding: 2px;
+      }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span class="material-icons">vibration</span>
+    <h1>Vibration</h1>
+    <div class="actions">
+      <label class="btn" for="videoInput"><span class="material-icons">video_file</span></label>
+      <input type="file" name="videoIn" id="videoInput" accept="video/*">
+      <button onclick="loadVideoUrl()"><span class="material-icons">attach_file</span></button>
+      <button onclick="loadJson()"><span class="material-icons">folder_open</span></button>
+      <button onclick="downloadJson()"><span class="material-icons">download</span></button>
+    </div>
+  </div>
+
+  <div class="editor">
+    <video id="video" controls></video>
+    <div class="controls">
+      <div class="timecs">
+      <button onclick="backwardVideo()" class="timec-i"><span class="material-icons">arrow_back</span></button>
+      <button ondblclick="askVideoTime()" class="timec-i"><span class="ctimeup">current time here</span></button>
+      <button onclick="forwardVideo()" class="timec-i"><span class="material-icons">arrow_forward</span></button>
+      </div>
+      <div class="b-c">
+      <button onclick="addVibration()"><span class="material-icons">add</span> Add Vibration</button>
+      <button onclick="add50V()">50ms</button>
+      </div>
+    </div>
+    <div id="vibrationList" class="vibration-list"></div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
+  <script src="lc.js"></script>
+</body>
+</html>
